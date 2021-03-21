@@ -11,8 +11,9 @@ MAINTAINER Sylvain Maucourt <smaucourt@gmail.com>
 # Preparations for sshd
 RUN apt-get -q update &&\
 	apt-get install -y ruby &&\
-    apt-get install -y locales &&\
-	apt-get install -y openjdk-11-jdk
+   	apt-get install -y locales &&\
+	apt-get install -y openjdk-11-jdk &&\
+	apt-get install -y git
 	
 RUN locale-gen en_US.UTF-8 &&\
     DEBIAN_FRONTEND="noninteractive" apt-get -q upgrade -y -o Dpkg::Options::="--force-confnew" --no-install-recommends &&\
